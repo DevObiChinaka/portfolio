@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Social Media Preview Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #1f2937;
+            color: white;
+            padding: 20px;
+        }
+        .preview-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            max-width: 1200px;
+        }
+        canvas {
+            border: 2px solid #2563eb;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        .instructions {
+            background: #374151;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+            max-width: 800px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        .note {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Social Media Preview Image Generator</h1>
+    <p class="note">Optimal Size: 1200x630px for Facebook, LinkedIn, Twitter</p>
+    
+    <div class="instructions">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Canvas will show your optimized social preview (1200x630)</li>
+            <li>Includes your brand image + portfolio title + description</li>
+            <li>Click "Generate Preview" to create</li>
+            <li>Click "Download og-image.jpg" to save</li>
+            <li>Save as <strong>og-image.jpg</strong> in your <strong>public/</strong> folder</li>
+        </ol>
+    </div>
+    
+    <div class="preview-container">
+        <canvas id="ogImage" width="1200" height="630"></canvas>
+    </div>
+    
+    <div>
+        <button onclick="generateOGImage()">Generate Preview</button>
+        <button onclick="downloadOGImage()">Download og-image.jpg</button>
+    </div>
+
+    <script>
+        let brandImage = null;
+        
+        // Load brand image
+        const img = new Image();
+        img.onload = function() {
+            brandImage = img;
+            generateOGImage();
+        };
+        img.src = 'mybrandimage.jpg';
+        
+        function generateOGImage() {
+            if (!brandImage) {
+                alert('Brand image is still loading...');
+                return;
+            }
+            
+            const canvas = document.getElementById('ogImage');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#1e3a8a'); // blue-900
+            gradient.addColorStop(0.5, '#2563eb'); // blue-600
+            gradient.addColorStop(1, '#7c3aed'); // purple-600
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Add subtle pattern
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+            for (let i = 0; i < 20; i++) {
+                ctx.beginPath();
+                ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 100, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            // Draw brand image (circular, left side)
+            const imageSize = 300;
+            const imageX = 150;
+            const imageY = canvas.height / 2;
+            
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(imageX, imageY, imageSize / 2, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.clip();
+            
+            // Add white border circle
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+            
+            ctx.drawImage(brandImage, imageX - imageSize / 2, imageY - imageSize / 2, imageSize, imageSize);
+            ctx.restore();
+            
+            // Draw white border around image
+            ctx.beginPath();
+            ctx.arc(imageX, imageY, imageSize / 2, 0, Math.PI * 2);
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+            
+            // Text content (right side)
+            const textX = 500;
+            const textWidth = canvas.width - textX - 80;
+            
+            // Name/Title
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 72px Arial, sans-serif';
+            ctx.fillText('DevObi', textX, 200);
+            
+            // Subtitle
+            ctx.font = 'bold 42px Arial, sans-serif';
+            ctx.fillStyle = '#e0e7ff'; // light blue
+            ctx.fillText('Full-Stack Developer', textX, 270);
+            
+            // Technologies
+            ctx.font = '32px Arial, sans-serif';
+            ctx.fillStyle = '#c7d2fe'; // lighter blue
+            ctx.fillText('Django • Next.js • Flutter', textX, 340);
+            
+            // Description
+            ctx.font = '28px Arial, sans-serif';
+            ctx.fillStyle = '#ddd6fe'; // light purple
+            const description = 'Building production-ready SaaS platforms';
+            ctx.fillText(description, textX, 420);
+            
+            ctx.fillText('and scalable systems', textX, 460);
+            
+            // Footer tag
+            ctx.font = 'bold 24px Arial, sans-serif';
+            ctx.fillStyle = '#60a5fa'; // blue-400
+            ctx.fillText('devobichinaka.vercel.app', textX, 560);
+        }
+        
+        function downloadOGImage() {
+            const canvas = document.getElementById('ogImage');
+            canvas.toBlob(blob => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'og-image.jpg';
+                a.click();
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.95);
+        }
+    </script>
+</body>
+</html>
