@@ -48,7 +48,7 @@ export default function About() {
         <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center">
           About Me
         </h2>
-        <div className="text-sm sm:text-lg text-gray-700 dark:text-gray-300 space-y-3 sm:space-y-4 mb-12 sm:mb-16">
+        <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 space-y-3 sm:space-y-4 mb-12 sm:mb-16">
           <p>
             I'm a versatile full-stack developer specializing in building production-grade SaaS platforms, 
             mobile applications, and enterprise solutions. With expertise in{' '}
@@ -114,7 +114,7 @@ export default function About() {
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I actually ship. No excuses, no endless "almost done."
               </h4>
-              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 While others build portfolios with fake projects, I've deployed real systems handling actual users and payments. 
                 Oxiworld processes subscriptions. The attendance system tracks real students. These aren't demos, they're live, 
                 working products that people depend on.
@@ -125,7 +125,7 @@ export default function About() {
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I obsess over details that most developers ignore.
               </h4>
-              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 Payment webhooks that actually work. Authentication flows that don't break. Error handling that catches edge cases. 
                 Database queries optimized for scale. I don't cut corners because I know that's what separates good projects from 
                 great ones.
@@ -136,7 +136,7 @@ export default function About() {
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I solve problems, not just write code.
               </h4>
-              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 You need facial recognition for attendance? I'll integrate ML Kit and make it work reliably. Payment gateway acting up? 
                 I'll debug the webhook flow and fix it. I don't just implement features, I make sure they actually solve the problem 
                 you're facing.
@@ -147,7 +147,7 @@ export default function About() {
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I'm still hungry. Still learning. Still improving.
               </h4>
-              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 Two years in, and I'm not satisfied. Every project teaches me something new. Every challenge makes me better. 
                 I'm not here to coast, I'm here to build a career on exceptional work, and that means treating every project like 
                 it's the one that defines me.

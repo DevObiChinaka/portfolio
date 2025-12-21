@@ -126,7 +126,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   
-                  <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-5 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-5 leading-relaxed">
                     {project.description}
                   </p>
 
