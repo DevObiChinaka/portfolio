@@ -1,6 +1,7 @@
 "use client";
 
-import { ExternalLink, Github, GraduationCap, Building2, Smartphone, Ticket } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import { AcademicCapIcon, BuildingOffice2Icon, DevicePhoneMobileIcon, TicketIcon } from "@heroicons/react/24/solid";
 import { useEffect, useRef, useState } from "react";
 
 // Add as more projects are done
@@ -12,7 +13,7 @@ const projects = [
     github: "https://github.com/DevObiChinaka/oxidane",
     live: "https://oxidane-two.vercel.app/",
     category: "Full-Stack",
-    icon: GraduationCap,
+    icon: AcademicCapIcon,
     gradient: "from-blue-600 to-cyan-600",
     highlight: "Production SaaS with payments"
   },
@@ -23,7 +24,7 @@ const projects = [
     github: "https://github.com/DevObiChinaka/darew",
     live: "https://darew.netlify.app/",
     category: "Frontend",
-    icon: Building2,
+    icon: BuildingOffice2Icon,
     gradient: "from-purple-600 to-pink-600",
     highlight: "30+ years of excellence"
   },
@@ -34,7 +35,7 @@ const projects = [
     github: "https://github.com/DevObiChinaka/uniapp",
     live: "",
     category: "Full-Stack",
-    icon: Smartphone,
+    icon: DevicePhoneMobileIcon,
     gradient: "from-green-600 to-teal-600",
     highlight: "AI-powered facial recognition"
   },
@@ -45,7 +46,7 @@ const projects = [
     github: "https://github.com/DevObiChinaka/dinner",
     live: "https://devobichinaka.github.io/dinner/",
     category: "Frontend",
-    icon: Ticket,
+    icon: TicketIcon,
     gradient: "from-orange-600 to-red-600",
     highlight: "Real-time QR generation"
   },
