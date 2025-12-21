@@ -103,53 +103,53 @@ export default function About() {
 
         {/* Why Work With Me Section */}
         <div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
             Why Work With Me
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-3xl">
             I'm not just another developer, I'm someone who genuinely cares about building things that work and last.
           </p>
-          <div className="space-y-6">
-            <div className="border-l-4 border-blue-600 pl-6 py-2">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="border-l-4 border-blue-600 pl-4 sm:pl-6 py-2">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I actually ship. No excuses, no endless "almost done."
               </h4>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 While others build portfolios with fake projects, I've deployed real systems handling actual users and payments. 
                 Oxiworld processes subscriptions. The attendance system tracks real students. These aren't demos, they're live, 
                 working products that people depend on.
               </p>
             </div>
             
-            <div className="border-l-4 border-purple-600 pl-6 py-2">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            <div className="border-l-4 border-purple-600 pl-4 sm:pl-6 py-2">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I obsess over details that most developers ignore.
               </h4>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 Payment webhooks that actually work. Authentication flows that don't break. Error handling that catches edge cases. 
                 Database queries optimized for scale. I don't cut corners because I know that's what separates good projects from 
                 great ones.
               </p>
             </div>
             
-            <div className="border-l-4 border-green-600 pl-6 py-2">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            <div className="border-l-4 border-green-600 pl-4 sm:pl-6 py-2">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I solve problems, not just write code.
               </h4>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 You need facial recognition for attendance? I'll integrate ML Kit and make it work reliably. Payment gateway acting up? 
                 I'll debug the webhook flow and fix it. I don't just implement features, I make sure they actually solve the problem 
                 you're facing.
               </p>
             </div>
             
-            <div className="border-l-4 border-orange-600 pl-6 py-2">
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            <div className="border-l-4 border-orange-600 pl-4 sm:pl-6 py-2">
+              <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                 I'm still hungry. Still learning. Still improving.
               </h4>
-              <p className="text-gray-600 dark:text-gray-400">
+              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                 Two years in, and I'm not satisfied. Every project teaches me something new. Every challenge makes me better. 
-                I'm not here to coast—I'm here to build a career on exceptional work, and that means treating every project like 
+                I'm not here to coast, I'm here to build a career on exceptional work, and that means treating every project like 
                 it's the one that defines me.
               </p>
             </div>

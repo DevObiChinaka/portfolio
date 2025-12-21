@@ -288,7 +288,7 @@ export default function Contact() {
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-500">
               Built with <span className="text-red-500">♥</span> using Next.js, TypeScript & Tailwind CSS
-            </p>
+            </p><br /><p className="text-sm text-gray-500 dark:text-gray-500">Let's work together and achieve greatness</p>
           </div>
         </footer>
       </div>
