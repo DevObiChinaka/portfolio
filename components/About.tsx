@@ -107,7 +107,7 @@ export default function About() {
             Why Work With Me
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-3xl">
-            I'm not just another developer—I'm someone who genuinely cares about building things that work and last.
+            I'm not just another developer, I'm someone who genuinely cares about building things that work and last.
           </p>
           <div className="space-y-6">
             <div className="border-l-4 border-blue-600 pl-6 py-2">
@@ -116,7 +116,7 @@ export default function About() {
               </h4>
               <p className="text-gray-600 dark:text-gray-400">
                 While others build portfolios with fake projects, I've deployed real systems handling actual users and payments. 
-                Oxidane processes subscriptions. The attendance system tracks real students. These aren't demos—they're live, 
+                Oxidane processes subscriptions. The attendance system tracks real students. These aren't demos, they're live, 
                 working products that people depend on.
               </p>
             </div>
@@ -138,7 +138,7 @@ export default function About() {
               </h4>
               <p className="text-gray-600 dark:text-gray-400">
                 You need facial recognition for attendance? I'll integrate ML Kit and make it work reliably. Payment gateway acting up? 
-                I'll debug the webhook flow and fix it. I don't just implement features—I make sure they actually solve the problem 
+                I'll debug the webhook flow and fix it. I don't just implement features, I make sure they actually solve the problem 
                 you're facing.
               </p>
             </div>

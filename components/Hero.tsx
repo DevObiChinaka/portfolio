@@ -100,7 +100,6 @@ export default function Hero() {
           >
             <span className="flex items-center justify-center gap-2">
               Hire Me
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </span>
           </a>
           <a
