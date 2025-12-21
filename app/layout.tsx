@@ -59,9 +59,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add these when you set them up:
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
+    google: "7ZD_cVmUgBfQJRmR1dAZvC60f9wbK0zCPjNssvy7_1g",
   },
 };
 
@@ -70,6 +68,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chinaka Obinna",
+    "alternateName": "DevObi",
+    "url": "https://devobichinaka.vercel.app",
+    "image": "https://devobichinaka.vercel.app/mybrandimage.jpg",
+    "sameAs": [
+      "https://github.com/devobichinaka"
+    ],
+    "jobTitle": "Full-Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "knowsAbout": [
+      "Django",
+      "Python",
+      "Next.js",
+      "React",
+      "Flutter",
+      "TypeScript",
+      "PostgreSQL",
+      "REST API",
+      "Payment Integration",
+      "OAuth",
+      "SaaS Development"
+    ],
+    "description": "Full-Stack Developer building production-ready SaaS platforms, mobile apps, and scalable systems with Django, Python, Next.js, and Flutter.",
+    "email": "obinnachiderachinaka@gmail.com"
+  };
+
   return (
     <html lang="en">
       <head>
@@ -79,6 +109,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#2563eb" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
