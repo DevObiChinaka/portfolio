@@ -47,7 +47,7 @@ export default function Hero() {
         </div>
 
         {/* Main Heading with Gradient */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 px-2">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-3 sm:mb-6 px-2">
           <span className="text-gray-900 dark:text-white">Hi, I'm </span>
           <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent animate-gradient">
             DevObi
@@ -55,20 +55,20 @@ export default function Hero() {
         </h1>
 
         {/* Tagline with Icon */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-4">
-          <Code2 className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400" />
-          <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-6 px-4">
+          <Code2 className="w-5 h-5 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400" />
+          <h2 className="text-base sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 text-center leading-snug">
             Building Production-Ready & Scalable Systems
           </h2>
         </div>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-3 sm:mb-4 font-medium px-4">
+        <p className="text-base sm:text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-2 sm:mb-4 font-medium px-4">
           Full-Stack Developer <span className="text-blue-600 dark:text-blue-400">|</span> Backend Specialist
         </p>
 
         {/* Description with Tech Stack */}
-        <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
+        <p className="text-sm sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4">
           Building production-ready SaaS platforms and mobile solutions with{' '}
           <span className="font-semibold text-blue-600 dark:text-blue-400 hover:underline decoration-2 decoration-blue-600/50 transition-all">Django</span>,{' '}
           <span className="font-semibold text-purple-600 dark:text-purple-400 hover:underline decoration-2 decoration-purple-600/50 transition-all">Next.js</span>, and{' '}
@@ -77,7 +77,7 @@ export default function Hero() {
         </p>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 px-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 mb-6 sm:mb-12 px-4">
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">2+</div>
             <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Years Experience</div>

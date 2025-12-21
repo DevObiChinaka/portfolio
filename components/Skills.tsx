@@ -128,25 +128,25 @@ export default function Skills() {
     <section
       ref={sectionRef}
       id="skills"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800 relative overflow-hidden"
+      className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800 relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-12 sm:mb-16 transition-all duration-1000 ${
+        <div className={`text-center mb-8 sm:mb-16 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 px-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4 px-4">
             Skills & <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Technologies</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
             Tools and technologies I use to bring projects to life
           </p>
           <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
           {skillCategories.map((category, catIndex) => {
             const colors = getColorClasses(category.color);
             return (
@@ -195,28 +195,28 @@ export default function Skills() {
         </div>
 
         {/* Tech Stack with Logos */}
-        <div className={`mt-12 sm:mt-16 transition-all duration-1000 delay-700 ${
+        <div className={`mt-8 sm:mt-16 transition-all duration-1000 delay-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h3 className="text-xl sm:text-2xl font-bold text-center text-gray-900 dark:text-white mb-6 sm:mb-8 px-4">
+          <h3 className="text-lg sm:text-2xl font-bold text-center text-gray-900 dark:text-white mb-4 sm:mb-8 px-4">
             Technologies I <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Work With</span>
           </h3>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 px-4">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 px-4">
             {/* Python */}
             <div className="group flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-12 h-12 sm:w-16 sm:h-16" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-10 h-10 sm:w-16 sm:h-16" />
               <span className="text-xs font-medium text-gray-600 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Python</span>
             </div>
             {/* Django */}
             <div className="group flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white dark:bg-gray-700 rounded-lg flex items-center justify-center shadow-sm">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" className="w-10 h-10 sm:w-14 sm:h-14 dark:invert" />
+              <div className="w-10 h-10 sm:w-16 sm:h-16 bg-white dark:bg-gray-700 rounded-lg flex items-center justify-center shadow-sm">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" className="w-8 h-8 sm:w-14 sm:h-14 dark:invert" />
               </div>
               <span className="text-xs font-medium text-gray-600 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Django</span>
             </div>
             {/* PostgreSQL */}
             <div className="group flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-12 h-12 sm:w-16 sm:h-16" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-10 h-10 sm:w-16 sm:h-16" />
               <span className="text-xs font-medium text-gray-600 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">PostgreSQL</span>
             </div>
             {/* Redis */}

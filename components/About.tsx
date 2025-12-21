@@ -43,12 +43,12 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+    <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center">
           About Me
         </h2>
-        <div className="text-lg text-gray-700 dark:text-gray-300 space-y-4 mb-16">
+        <div className="text-sm sm:text-lg text-gray-700 dark:text-gray-300 space-y-3 sm:space-y-4 mb-12 sm:mb-16">
           <p>
             I'm a versatile full-stack developer specializing in building production-grade SaaS platforms, 
             mobile applications, and enterprise solutions. With expertise in{' '}
@@ -70,24 +70,24 @@ export default function About() {
         </div>
 
         {/* Expertise Areas */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+        <div className="mb-12 sm:mb-16">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
             Technical Expertise
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <div
                   key={index}
-                  className="group relative bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-300"
+                  className="group relative bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 hover:border-blue-600 dark:hover:border-blue-400 transition-all duration-300"
                 >
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0">
-                      <Icon className="w-6 h-6 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
                         {service.title}
                       </h4>
                       <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -116,7 +116,7 @@ export default function About() {
               </h4>
               <p className="text-gray-600 dark:text-gray-400">
                 While others build portfolios with fake projects, I've deployed real systems handling actual users and payments. 
-                Oxidane processes subscriptions. The attendance system tracks real students. These aren't demos, they're live, 
+                Oxiworld processes subscriptions. The attendance system tracks real students. These aren't demos, they're live, 
                 working products that people depend on.
               </p>
             </div>
