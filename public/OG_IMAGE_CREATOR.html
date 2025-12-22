@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Graph Image Creator - 1200x630</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .canvas-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        canvas {
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #334155;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        
+        input, textarea {
+            padding: 10px;
+            border: 2px solid #475569;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #1e293b;
+            color: white;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+            font-family: inherit;
+        }
+        
+        .color-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .tip {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            line-height: 1.6;
+            border-left: 4px solid #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Open Graph Image Creator</h1>
+    <p style="color: #94a3b8; max-width: 600px; text-align: center;">
+        Create a professional 1200x630 Open Graph image for social media previews (Facebook, LinkedIn, Twitter, WhatsApp)
+    </p>
+
+    <div class="canvas-container">
+        <canvas id="canvas" width="1200" height="630"></canvas>
+    </div>
+
+    <div class="controls">
+        <div class="input-group">
+            <label for="mainText">Main Text (Headline)</label>
+            <input type="text" id="mainText" value="DevObi" placeholder="Your name or brand">
+        </div>
+
+        <div class="input-group">
+            <label for="subtitle">Subtitle</label>
+            <textarea id="subtitle" placeholder="Full-Stack Developer | Django, Next.js & Flutter Expert">Full-Stack Developer
+Django, Next.js & Flutter Expert</textarea>
+        </div>
+
+        <div class="input-group">
+            <label for="tagline">Tagline / Third Line</label>
+            <input type="text" id="tagline" value="Building Production-Ready & Scalable Systems" placeholder="Optional tagline">
+        </div>
+
+        <div class="color-row">
+            <div class="input-group">
+                <label for="bgColor1">Background Gradient Start</label>
+                <input type="color" id="bgColor1" value="#1e293b">
+            </div>
+
+            <div class="input-group">
+                <label for="bgColor2">Background Gradient End</label>
+                <input type="color" id="bgColor2" value="#0f172a">
+            </div>
+        </div>
+
+        <div class="color-row">
+            <div class="input-group">
+                <label for="accentColor">Accent Color</label>
+                <input type="color" id="accentColor" value="#3b82f6">
+            </div>
+
+            <div class="input-group">
+                <label for="textColor">Text Color</label>
+                <input type="color" id="textColor" value="#ffffff">
+            </div>
+        </div>
+
+        <button onclick="drawImage()">🔄 Update Preview</button>
+        <button onclick="downloadImage()">⬇️ Download og-image.png</button>
+
+        <div class="tip">
+            <strong>💡 Pro Tip:</strong> After downloading, save it as <code>og-image.png</code> in your <code>/public</code> folder, 
+            then update <code>layout.tsx</code> to use <code>/og-image.png</code> instead of <code>/mybrandimage.jpg</code>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawImage() {
+            const mainText = document.getElementById('mainText').value || 'DevObi';
+            const subtitle = document.getElementById('subtitle').value || 'Full-Stack Developer';
+            const tagline = document.getElementById('tagline').value || '';
+            const bgColor1 = document.getElementById('bgColor1').value;
+            const bgColor2 = document.getElementById('bgColor2').value;
+            const accentColor = document.getElementById('accentColor').value;
+            const textColor = document.getElementById('textColor').value;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, 1200, 630);
+
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 1200, 630);
+            gradient.addColorStop(0, bgColor1);
+            gradient.addColorStop(1, bgColor2);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 1200, 630);
+
+            // Decorative elements
+            ctx.fillStyle = accentColor + '15';
+            ctx.beginPath();
+            ctx.arc(1100, 100, 200, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(100, 550, 150, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Accent bar on left
+            ctx.fillStyle = accentColor;
+            ctx.fillRect(0, 0, 8, 630);
+
+            // Main text
+            ctx.fillStyle = textColor;
+            ctx.font = 'bold 120px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(mainText, 80, 200);
+
+            // Subtitle (multi-line support)
+            ctx.font = '600 48px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+            ctx.fillStyle = textColor + 'dd';
+            const subtitleLines = subtitle.split('\n');
+            let y = 280;
+            subtitleLines.forEach(line => {
+                ctx.fillText(line, 80, y);
+                y += 60;
+            });
+
+            // Tagline
+            if (tagline) {
+                ctx.font = '500 36px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+                ctx.fillStyle = accentColor;
+                ctx.fillText(tagline, 80, y + 40);
+            }
+
+            // Footer
+            ctx.font = '500 28px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+            ctx.fillStyle = textColor + '88';
+            ctx.fillText('devobichinaka.vercel.app', 80, 580);
+
+            // Decorative dot
+            ctx.fillStyle = accentColor;
+            ctx.beginPath();
+            ctx.arc(50, 200, 12, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function downloadImage() {
+            const link = document.createElement('a');
+            link.download = 'og-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Draw initial image
+        drawImage();
+
+        // Auto-update on input change
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', drawImage);
+        });
+    </script>
+</body>
+</html>
