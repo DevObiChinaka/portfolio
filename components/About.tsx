@@ -50,22 +50,29 @@ export default function About() {
         </h2>
         <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 space-y-3 sm:space-y-4 mb-12 sm:mb-16">
           <p>
-            I'm a versatile full-stack developer specializing in building production-grade SaaS platforms, 
-            mobile applications, and enterprise solutions. With expertise in{' '}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">Django, Python, Next.js, and Flutter</span>, 
-            I create scalable systems that handle real-world complexity.
+            I'm driven by a simple passion: <span className="font-semibold text-blue-600 dark:text-blue-400">bringing automation to life</span>. 
+            There's something magical about building systems that make life easier and eliminate unnecessary stress. 
+            That's what got me into coding, and it's what keeps me obsessed with solving real problems through technology.
           </p>
           <p>
-            My portfolio includes live SaaS platforms with{' '}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">payment gateway integrations, 
-            Google OAuth authentication, Telegram bot APIs</span>, and mobile apps with{' '}
-            <span className="font-semibold text-blue-600 dark:text-blue-400">AI-powered facial recognition and geofencing</span>. 
-            I've deployed production systems on VPS with Nginx, Gunicorn, and Celery for background tasks.
+            I'm a full-stack developer and <span className="font-semibold text-blue-600 dark:text-blue-400">President of the Google Developer Student Club</span> at 
+            Admiralty University of Nigeria, where I'm studying Software Engineering. I chose full-stack development because it gives me 
+            complete control to bring ideas to life from concept to deployment. Most of my projects require end-to-end ownership, 
+            and I love having the freedom to architect both the backend logic and the user experience.
           </p>
           <p>
-            From architecting RESTful APIs to implementing secure payment flows and building cross-platform 
-            mobile experiences, I deliver end-to-end solutions. My code powers ticketing systems, 
-            attendance platforms, corporate websites, and subscription-based services used by real users daily.
+            My approach to problem-solving starts with research and sketches, refining until the solution is solid. 
+            Good engineering isn't about diving straight into code—it's about thinking through the problem first. 
+            I focus on{' '}
+            <span className="font-semibold text-blue-600 dark:text-blue-400">client satisfaction through optimal quality delivered in the shortest possible time</span>. 
+            I take the extra hours, pay attention to details, and ensure every project meets the mark. When you work with me, 
+            you're working with someone who treats your project like it's the one that defines them.
+          </p>
+          <p>
+            Beyond coding, I play table tennis and chess, trade the market, and constantly research new technologies. 
+            I believe no knowledge is wasted. What excites me most? <span className="font-semibold text-blue-600 dark:text-blue-400">Challenging projects</span>. 
+            There's a thrill in solving complex problems and crafting smart solutions that make everything easier. 
+            That's where I come alive.
           </p>
         </div>
 
@@ -112,45 +119,45 @@ export default function About() {
           <div className="space-y-4 sm:space-y-6">
             <div className="border-l-4 border-blue-600 pl-4 sm:pl-6 py-2">
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
-                I actually ship. No excuses, no endless "almost done."
+                I ship real products, not portfolio demos.
               </h4>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                While others build portfolios with fake projects, I've deployed real systems handling actual users and payments. 
-                Oxiworld processes subscriptions. The attendance system tracks real students. These aren't demos, they're live, 
-                working products that people depend on.
+                Oxiworld processes real subscriptions. UniApp tracks actual students with facial recognition. 
+                Darew serves a 30-year-old oil & gas company. These aren't proof-of-concepts—they're live systems 
+                handling real users, real payments, and real business operations.
               </p>
             </div>
             
             <div className="border-l-4 border-purple-600 pl-4 sm:pl-6 py-2">
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
-                I obsess over details that most developers ignore.
+                Client satisfaction through quality and speed.
               </h4>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                Payment webhooks that actually work. Authentication flows that don't break. Error handling that catches edge cases. 
-                Database queries optimized for scale. I don't cut corners because I know that's what separates good projects from 
-                great ones.
+                I take the extra hours. I pay attention to your details. I handle feedback positively and implement changes 
+                immediately. My goal is simple: deliver the best code quality in the shortest possible time. 
+                I'm fully available and treat your project with the urgency it deserves.
               </p>
             </div>
             
             <div className="border-l-4 border-green-600 pl-4 sm:pl-6 py-2">
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
-                I solve problems, not just write code.
+                I thrive on challenging problems.
               </h4>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                You need facial recognition for attendance? I'll integrate ML Kit and make it work reliably. Payment gateway acting up? 
-                I'll debug the webhook flow and fix it. I don't just implement features, I make sure they actually solve the problem 
-                you're facing.
+                The harder the problem, the more excited I get. There's a genuine thrill in finding smart solutions that 
+                make complex things simple. Hitting a roadblock? That's where I dig deeper. I won't stop until I've cracked 
+                it and built something that works beautifully.
               </p>
             </div>
             
             <div className="border-l-4 border-orange-600 pl-4 sm:pl-6 py-2">
               <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">
-                I'm still hungry. Still learning. Still improving.
+                Constantly learning, constantly improving.
               </h4>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                Two years in, and I'm not satisfied. Every project teaches me something new. Every challenge makes me better. 
-                I'm not here to coast, I'm here to build a career on exceptional work, and that means treating every project like 
-                it's the one that defines me.
+                As President of the Google Developer Student Club and a Software Engineering student at Admiralty University, 
+                I'm surrounded by innovation. I research constantly, absorb new knowledge daily, and believe no learning is wasted. 
+                Two years in, and I'm hungrier than ever to build exceptional work.
               </p>
             </div>
           </div>
