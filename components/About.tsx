@@ -55,14 +55,14 @@ export default function About() {
             That's what got me into coding, and it's what keeps me obsessed with solving real problems through technology.
           </p>
           <p>
-            I'm a full-stack developer and <span className="font-semibold text-blue-600 dark:text-blue-400">President of the Google Developer Student Club</span> at 
+            I'm a full-stack developer and <span className="font-semibold text-blue-600 dark:text-blue-400">Lead of the Google Developer Student Club (GDSC)</span> at 
             Admiralty University of Nigeria, where I'm studying Software Engineering. I chose full-stack development because it gives me 
             complete control to bring ideas to life from concept to deployment. Most of my projects require end-to-end ownership, 
             and I love having the freedom to architect both the backend logic and the user experience.
           </p>
           <p>
             My approach to problem-solving starts with research and sketches, refining until the solution is solid. 
-            Good engineering isn't about diving straight into code—it's about thinking through the problem first. 
+            Good engineering isn't about diving straight into code, it's about thinking through the problem first. 
             I focus on{' '}
             <span className="font-semibold text-blue-600 dark:text-blue-400">client satisfaction through optimal quality delivered in the shortest possible time</span>. 
             I take the extra hours, pay attention to details, and ensure every project meets the mark. When you work with me, 
@@ -155,7 +155,7 @@ export default function About() {
                 Constantly learning, constantly improving.
               </h4>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                As President of the Google Developer Student Club and a Software Engineering student at Admiralty University, 
+                As GDSC Lead and a Software Engineering student at Admiralty University, 
                 I'm surrounded by innovation. I research constantly, absorb new knowledge daily, and believe no learning is wasted. 
                 Two years in, and I'm hungrier than ever to build exceptional work.
               </p>
