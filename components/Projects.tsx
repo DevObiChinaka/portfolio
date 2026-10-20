@@ -89,6 +89,25 @@ export default function Projects() {
                 {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">Live project <ArrowUpRight size={15} /></a>}
               </div>
 
+              {(project.title === "Oxidane / Oxiworld" || project.title === "ADUN Dinner & Awards Night") && (
+                <div className="mt-7 border-t border-gray-200 dark:border-gray-800 pt-6">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Project preview</h4>
+                  <div className="mt-4 overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                    <Image
+                      src={project.title === "Oxidane / Oxiworld" ? "/project-screenshots/oxiworld-homepage.jpg" : "/project-screenshots/adun-dinner-ticketing.jpg"}
+                      alt={project.title === "Oxidane / Oxiworld" ? "Oxiworld Forex Academy homepage showing market rates and trading resources" : "ADUN Dinner Night ticket-generation page with name and matric-number fields"}
+                      width={1700}
+                      height={900}
+                      className="h-auto w-full object-contain"
+                      sizes="(max-width: 1024px) 100vw, 520px"
+                    />
+                    <p className="px-3 py-2 text-xs font-medium text-gray-600 dark:text-gray-300">
+                      {project.title === "Oxidane / Oxiworld" ? "Live homepage preview" : "Ticket-generation interface preview"}
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {project.title === "ScoreCode" && (
                 <div className="mt-7 border-t border-gray-200 dark:border-gray-800 pt-6">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white">A look inside ScoreCode</h4>
