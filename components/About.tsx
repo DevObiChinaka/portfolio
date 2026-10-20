@@ -36,7 +36,7 @@ export default function About() {
             mapping out how a solution should work, and then building and refining the system.
           </p>
           <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">
-            I use AI-assisted development tools as part of my workflow, but I see generated code as something to inspect,
+            I use AI assisted development tools as part of my workflow, but I see generated code as something to inspect,
             test, and understand—not something to accept blindly. That has also sparked a broader interest in how developers
             learn, collaborate, and demonstrate competence as these tools become more common.
           </p>
