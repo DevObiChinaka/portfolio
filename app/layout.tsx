@@ -14,17 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevObi - Full-Stack Developer | Django, Next.js & Flutter Expert in Nigeria",
-  description: "Chinaka Obinna (DevObi) - Expert Full-Stack Developer in Nigeria building production-ready SaaS platforms, mobile apps, and scalable systems. 2+ years experience with Django, Python, Next.js, Flutter, payment integrations (Paystack), Google OAuth, and AI-powered applications. Available for hire.",
+  title: "DevObi — Software Engineer | Backend Systems & Application Architecture",
+  description: "Chinaka Obinna (DevObi), Software Engineering graduate interested in backend systems, application architecture, software reliability, and human–AI collaboration. Explore selected projects and engineering interests.",
   keywords: [
     // Primary Skills
-    "Full-Stack Developer Nigeria", "Django Developer Nigeria", "Next.js Developer", "Flutter Developer", 
+    "Software Engineer Nigeria", "Backend Development", "Application Architecture", "Django", "Next.js", 
     "Python Developer", "Backend Developer Nigeria", "Frontend Developer",
     // Technologies
-    "Django Expert", "Next.js Expert", "React Developer", "TypeScript Developer", 
+    "Django", "Next.js", "React", "TypeScript", 
     "PostgreSQL", "Redis", "REST API Developer",
     // Services
-    "SaaS Development", "Mobile App Development", "Payment Integration Paystack", 
+    "Backend Systems", "API Development", "Software Engineering", 
     "OAuth Integration", "API Development", "DevOps Engineer",
     // Personal Brand
     "DevObi", "Chinaka Obinna", "Nigerian Developer", "Freelance Developer Nigeria",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
     type: "profile",
     locale: "en_US",
     url: "https://devobichinaka.vercel.app",
-    title: "DevObi - Full-Stack Developer | Django, Next.js & Flutter Expert",
-    description: "Expert Full-Stack Developer in Nigeria specializing in production-ready SaaS platforms, mobile apps with AI, and scalable backend systems. Django, Python, Next.js, Flutter, payment integrations. Available for hire.",
-    siteName: "DevObi - Full-Stack Developer Portfolio",
+    title: "DevObi — Software Engineer | Backend Systems & Application Architecture",
+    description: "Software Engineering graduate focused on backend systems, application architecture, and building useful software. Exploring human–AI collaboration in software engineering.",
+    siteName: "DevObi — Software Engineering Portfolio",
     images: [
       {
         url: "/mybrandimage.jpg",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevObi - Full-Stack Developer | Django, Next.js & Flutter Expert",
+    title: "DevObi — Software Engineer | Backend Systems & Application Architecture",
     description: "Expert Full-Stack Developer in Nigeria. Building production-ready SaaS platforms with Django, Next.js, Flutter. Payment integrations, OAuth, AI-powered apps. Available for hire.",
     images: ["/mybrandimage.jpg"],
     creator: "@devobichinaka",
@@ -98,7 +98,7 @@ export default function RootLayout({
       "https://github.com/devobichinaka",
       "https://twitter.com/devobichinaka"
     ],
-    "jobTitle": "Full-Stack Developer",
+    "jobTitle": "Software Engineer",
     "worksFor": {
       "@type": "Organization",
       "name": "Freelance"
@@ -112,7 +112,7 @@ export default function RootLayout({
     ],
     "knowsLanguage": ["English"],
     "nationality": "Nigerian",
-    "description": "Expert Full-Stack Developer specializing in production-ready SaaS platforms, mobile applications with AI, and scalable backend systems. 2+ years experience building real-world applications with Django, Python, Next.js, and Flutter.",
+    "description": "Software Engineering graduate interested in backend systems, application architecture, and human–AI collaboration in software engineering.", 
     "email": "obinnachiderachinaka@gmail.com",
     "telephone": "+234-706-240-1459",
     "address": {
@@ -127,7 +127,7 @@ export default function RootLayout({
     "name": "DevObi Portfolio",
     "alternateName": "Chinaka Obinna Portfolio",
     "url": "https://devobichinaka.vercel.app",
-    "description": "Professional portfolio of DevObi (Chinaka Obinna), showcasing full-stack development projects, SaaS platforms, and mobile applications.",
+    "description": "Portfolio of DevObi (Chinaka Obinna), showcasing selected software projects, engineering interests, and technical learning.", 
     "author": {
       "@type": "Person",
       "name": "Chinaka Obinna"
@@ -156,7 +156,7 @@ export default function RootLayout({
       "addressCountry": "Nigeria"
     },
     "priceRange": "$$",
-    "description": "Professional full-stack development services specializing in SaaS platforms, mobile apps, payment integrations, and scalable backend systems.",
+    "description": "Software engineering portfolio focused on backend systems, application integration, and software engineering practice.", 
     "serviceType": [
       "Full-Stack Development",
       "SaaS Development",
