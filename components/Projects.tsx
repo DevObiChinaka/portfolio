@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight, Github } from "lucide-react";
 
 const projects = [
@@ -22,10 +23,10 @@ const projects = [
   {
     title: "ScoreCode",
     type: "Final-year project",
-    description: "A computer-based programming examination and automated code-evaluation system designed around candidate management, exam controls, code submission, and automated evaluation.",
-    contribution: "The final-year project involved system design and development, with scripted end-to-end tests using synthetic accounts and submissions.",
-    stack: ["C#", ".NET", "WPF", "ASP.NET Core", "Blazor", "PostgreSQL"],
-    github: "",
+    description: "A computer-based programming examination and automated code-evaluation system. It brings together a Windows examination client, a central API, and a web administration portal for exam management, code submissions, and grading.",
+    contribution: "Designed and developed as an undergraduate final-year project. The system explores controlled local code execution, institution-aware administration, exam workflows, and optional human-supervised AI-assisted grading.",
+    stack: [".NET 10", "C#", "WPF", "ASP.NET Core", "Blazor Server", "EF Core", "PostgreSQL"],
+    github: "https://github.com/DevObiChinaka/ScoreCode",
     live: ""
   },
   {
@@ -46,6 +47,13 @@ const projects = [
     github: "https://github.com/DevObiChinaka/darew",
     live: "https://darew.netlify.app/"
   }
+];
+
+const scoreCodeScreenshots = [
+  { title: "Student dashboard", src: "/scorecode/student-dashboard.jpg", alt: "ScoreCode student dashboard screenshot" },
+  { title: "Lecturer dashboard", src: "/scorecode/lecturer-dashboard.jpg", alt: "ScoreCode lecturer dashboard screenshot" },
+  { title: "Institution administrator", src: "/scorecode/institution-admin-dashboard.jpg", alt: "ScoreCode institution administrator dashboard screenshot" },
+  { title: "Platform administrator", src: "/scorecode/platform-admin-dashboard.jpg", alt: "ScoreCode platform administrator dashboard screenshot" }
 ];
 
 export default function Projects() {
@@ -80,6 +88,33 @@ export default function Projects() {
                 {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400"><Github size={16} /> Source code <ArrowUpRight size={15} /></a>}
                 {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">Live project <ArrowUpRight size={15} /></a>}
               </div>
+
+              {project.title === "ScoreCode" && (
+                <div className="mt-7 border-t border-gray-200 dark:border-gray-800 pt-6">
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">A look inside ScoreCode</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                    The application has separate views for students, lecturers, institution administrators, and platform administrators.
+                  </p>
+                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {scoreCodeScreenshots.map((screenshot) => (
+                      <figure key={screenshot.src} className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+                        <Image
+                          src={screenshot.src}
+                          alt={screenshot.alt}
+                          width={1200}
+                          height={800}
+                          className="h-auto w-full object-contain"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 520px"
+                        />
+                        <figcaption className="px-3 py-2 text-xs font-medium text-gray-600 dark:text-gray-300">{screenshot.title}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  <a href="https://github.com/DevObiChinaka/ScoreCode" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
+                    Explore ScoreCode on GitHub <ArrowUpRight size={15} />
+                  </a>
+                </div>
+              )}
             </article>
           ))}
         </div>
