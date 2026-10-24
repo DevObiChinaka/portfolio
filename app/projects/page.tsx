@@ -3,7 +3,7 @@ import Projects from "@/components/Projects";
 
 export const metadata: Metadata = {
   title: "Projects | DevObi",
-  description: "Software projects, product experiments and practical tools by DevObi."
+  description: "A few things I've worked on, some finished and some still in progress."
 };
 
 export default function ProjectsPage() {
@@ -12,8 +12,8 @@ export default function ProjectsPage() {
       <div className="site-shell">
         <header className="pb-8 pt-14 sm:pt-20">
           <p className="mono text-xs mute"><span className="acc">~/portfolio</span> $ ls projects/</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">Work and experiments<span className="acc">.</span></h1>
-          <p className="mt-5 max-w-2xl text-base leading-8 mute sm:text-lg">A broader look at what I have built, what is still in progress, and what each project taught me. Start with the short summary, then follow the source, live preview or project notes if you want more.</p>
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">Projects<span className="acc">.</span></h1>
+          <p className="mt-5 max-w-2xl text-base leading-8 mute sm:text-lg">A few things I've worked on, some finished, some still in progress. Each one started a little differently.</p>
         </header>
         <Projects />
         <footer className="border-t py-8 mono text-xs mute" style={{ borderColor: "var(--line)" }}>© {new Date().getFullYear()} Chinaka Obinna / DevObi</footer>
