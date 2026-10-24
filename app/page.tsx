@@ -6,12 +6,14 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+    <main className="min-h-screen">
+      <div className="site-shell">
+        <Hero />
+        <Projects />
+        <Skills />
+        <About />
+        <Contact />
+      </div>
     </main>
   );
 }

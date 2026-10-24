@@ -7,32 +7,29 @@ const focus = [
 
 export default function About() {
   return (
-    <section id="about" className="py-16 border-t rule">
-      <h2 className="text-2xl font-semibold"># About</h2>
-      <div className="mt-6 max-w-2xl space-y-4">
+    <section id="about" className="section">
+      <p className="section-kicker">04 / A LITTLE CONTEXT</p>
+      <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">How I approach engineering<span className="acc">.</span></h2>
+      <div className="mt-6 max-w-3xl space-y-4 text-sm leading-7 sm:text-base">
         <p>
-          Engineering starts with understanding the problem. My Software Engineering background and project work
-          keep pulling me toward the parts of development that connect requirements, logic, data and people.
+          Engineering starts with understanding the problem. My Software Engineering background and project work keep pulling me toward the parts of development that connect requirements, logic, data and people.
         </p>
         <p>
-          I use AI-assisted tools in my workflow, but I treat generated code as something to read, test and
-          understand, not something to accept blindly. That has made me curious about how developers learn and
-          show competence as these tools become normal.
+          I use AI-assisted tools in my workflow, but I treat generated code as something to read, test and understand, not something to accept blindly. That has made me curious about how developers learn and demonstrate competence as these tools become more common.
         </p>
       </div>
 
-      <dl className="mt-10 space-y-5">
-        {focus.map(([k, v]) => (
-          <div key={k} className="grid gap-1 sm:grid-cols-[15rem_1fr] sm:gap-6">
-            <dt className="mono text-sm alt">{k}</dt>
-            <dd className="mute">{v}</dd>
+      <div className="mt-8 overflow-hidden rounded-xl border" style={{ borderColor: "var(--line)" }}>
+        {focus.map(([key, value], index) => (
+          <div key={key} className="grid gap-2 p-4 sm:grid-cols-[220px_1fr] sm:gap-6 sm:p-5" style={{ background: index % 2 === 0 ? "var(--panel)" : "transparent", borderBottom: index < focus.length - 1 ? "1px solid var(--line)" : undefined }}>
+            <h3 className="mono text-xs alt sm:text-sm">{key}</h3>
+            <p className="text-sm leading-6 mute">{value}</p>
           </div>
         ))}
-      </dl>
+      </div>
 
-      <p className="mt-10 max-w-2xl border-l-2 pl-4 mute" style={{ borderColor: "var(--acc)" }}>
-        Outside the code, student leadership taught me to coordinate people, communicate across groups and take
-        responsibility for shared work. It keeps me interested in software that works for the people who rely on it.
+      <p className="mt-8 max-w-3xl border-l-2 pl-4 text-sm leading-7 mute sm:text-base" style={{ borderColor: "var(--accent)" }}>
+        Outside the code, student leadership taught me to coordinate people, communicate across groups and take responsibility for shared work. It keeps me interested in software that works for the people who rely on it.
       </p>
     </section>
   );

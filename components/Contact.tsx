@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 type Status = "idle" | "sending" | "sent" | "error";
-const field = "mono w-full border-b rule bg-transparent py-2 text-sm outline-none focus:border-[var(--acc)]";
+const field = "mono w-full rounded-md border bg-transparent px-3 py-2.5 text-sm outline-none";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -30,55 +30,55 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 pb-24 border-t rule">
-      <h2 className="text-2xl font-semibold"># Contact</h2>
-      <p className="mt-4 max-w-2xl mute">
-        Open to work and to conversations about backend systems. Email works best, or use the form.
+    <section id="contact" className="section pb-16">
+      <p className="section-kicker">05 / SAY HELLO</p>
+      <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Let's build stuff that matters<span className="acc">.</span></h2>
+      <p className="mt-4 max-w-2xl text-sm leading-7 mute sm:text-base">
+        Got a problem worth solving, an idea to figure out, or just want to talk software? I'm up for a good conversation.
       </p>
-      <p className="mono mt-4 text-sm">
-        <a className="link" href="mailto:obinnachiderachinaka@gmail.com">obinnachiderachinaka@gmail.com</a>
-        <span className="mute">  /  </span>
-        <a className="link" href="https://github.com/DevObiChinaka" target="_blank" rel="noopener noreferrer">github.com/DevObiChinaka</a>
-      </p>
+      <div className="mono mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        <a className="link" href="mailto:obinnachiderachinaka@gmail.com">obinnachiderachinaka@gmail.com ↗</a>
+        <a className="link" href="https://github.com/DevObiChinaka" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
 
-      <form onSubmit={onSubmit} className="mt-8 max-w-xl border rule" style={{ background: "var(--panel)" }}>
-        <div className="mono border-b rule px-4 py-2 text-xs mute">send-message.sh</div>
-        <div className="space-y-5 p-4">
+      <form onSubmit={onSubmit} className="panel mt-8 max-w-2xl overflow-hidden rounded-xl">
+        <div className="flex items-center gap-2 border-b px-4 py-3 mono text-xs mute" style={{ borderColor: "var(--line)", background: "var(--panel-raised)" }}>
+          <span className="h-2 w-2 rounded-full" style={{ background: "#fb7185" }} />
+          <span className="h-2 w-2 rounded-full" style={{ background: "#fbbf24" }} />
+          <span className="h-2 w-2 rounded-full" style={{ background: "var(--accent)" }} />
+          <span className="ml-2">send-message.sh</span>
+        </div>
+        <div className="space-y-5 p-4 sm:p-6">
           <label className="block">
-            <span className="mono text-xs alt">--name</span>
-            <input className={field} name="name" value={form.name} onChange={onChange} required autoComplete="name" />
+            <span className="mono mb-2 block text-xs alt">--name</span>
+            <input className={field} style={{ borderColor: "var(--line)" }} name="name" value={form.name} onChange={onChange} required autoComplete="name" />
           </label>
           <label className="block">
-            <span className="mono text-xs alt">--email</span>
-            <input className={field} type="email" name="email" value={form.email} onChange={onChange} required autoComplete="email" />
+            <span className="mono mb-2 block text-xs alt">--email</span>
+            <input className={field} style={{ borderColor: "var(--line)" }} type="email" name="email" value={form.email} onChange={onChange} required autoComplete="email" />
           </label>
           <label className="block">
-            <span className="mono text-xs alt">--message</span>
-            <textarea className={field + " resize-none"} name="message" rows={5} value={form.message} onChange={onChange} required />
+            <span className="mono mb-2 block text-xs alt">--message</span>
+            <textarea className={field + " resize-y"} style={{ borderColor: "var(--line)" }} name="message" rows={5} value={form.message} onChange={onChange} required />
           </label>
-          <div className="flex items-center gap-4">
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="mono border px-4 py-2 text-sm disabled:opacity-50"
-              style={{ borderColor: "var(--acc)", color: "var(--acc)" }}
-            >
-              {status === "sending" ? "sending..." : "$ send"}
+          <div className="flex flex-wrap items-center gap-4">
+            <button type="submit" disabled={status === "sending"} className="mono rounded-md border px-4 py-2.5 text-sm font-medium disabled:opacity-50" style={{ borderColor: "var(--accent)", background: "var(--accent)", color: "#10140b" }}>
+              {status === "sending" ? "sending..." : "$ send message"}
             </button>
             <p role="status" className="mono text-xs">
               {status === "sent" && <span className="alt">Message sent. I'll reply by email.</span>}
-              {status === "error" && (
-                <span className="acc">
-                  Message not sent. Try again, or email me directly.
-                </span>
-              )}
+              {status === "error" && <span style={{ color: "#fda4af" }}>Message not sent. Try again or email me directly.</span>}
             </p>
           </div>
         </div>
       </form>
 
-      <footer className="mono mt-16 text-xs mute">
-        © {new Date().getFullYear()} Chinaka Obinna (DevObi). Built with Next.js, TypeScript and Tailwind CSS.
+      <footer className="mt-12 border-t pt-8" style={{ borderColor: "var(--line)" }}>
+        <p className="text-2xl font-semibold tracking-tight sm:text-3xl">Let's build stuff that <span className="acc">matters.</span></p>
+        <div className="mt-4 flex flex-col gap-2 mono text-xs mute sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} Chinaka Obinna / DevObi</span>
+          <a className="link" href="#top">back to top ↑</a>
+        </div>
       </footer>
     </section>
   );
