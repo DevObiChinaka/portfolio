@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -31,7 +32,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section pb-16">
-      <p className="section-kicker">05 / SAY HELLO</p>
+      <p className="section-kicker">CONTACT / SAY HELLO</p>
       <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Let's build stuff that matters<span className="acc">.</span></h2>
       <p className="mt-4 max-w-2xl text-sm leading-7 mute sm:text-base">
         Got a problem worth solving, an idea to figure out, or just want to talk software? I'm up for a good conversation.
@@ -77,7 +78,7 @@ export default function Contact() {
         <p className="text-2xl font-semibold tracking-tight sm:text-3xl">Let's build stuff that <span className="acc">matters.</span></p>
         <div className="mt-4 flex flex-col gap-2 mono text-xs mute sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} Chinaka Obinna / DevObi</span>
-          <a className="link" href="#top">back to top ↑</a>
+          <Link className="link" href="/">back home ↑</Link>
         </div>
       </footer>
     </section>

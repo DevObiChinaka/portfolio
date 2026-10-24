@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -14,20 +15,20 @@ export default function Hero() {
             Chinaka Obinna<span className="acc">.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 sm:text-xl">
-            I build practical software and work through the systems behind it... From application logic and APIs to data, integrations and deployment.
+            I build practical software and work through the systems behind it, from application logic and APIs to data, integrations and deployment.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-7 mute sm:text-base">
             Software Engineering graduate interested in backend systems, thoughtful engineering decisions, and how people work with AI-assisted development tools.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <a href="#projects" className="mono inline-flex items-center gap-2 rounded-md border px-4 py-2.5 text-sm font-medium" style={{ background: "var(--accent)", borderColor: "var(--accent)", color: "#10140b" }}>
+            <Link href="/projects" className="mono inline-flex items-center gap-2 rounded-md border px-4 py-2.5 text-sm font-medium" style={{ background: "var(--accent)", borderColor: "var(--accent)", color: "#10140b" }}>
               Explore projects <span aria-hidden="true">↘</span>
-            </a>
+            </Link>
             <a href="https://github.com/DevObiChinaka" target="_blank" rel="noopener noreferrer" className="mono inline-flex items-center gap-2 rounded-md border px-4 py-2.5 text-sm" style={{ borderColor: "var(--line)", background: "var(--panel)" }}>
               GitHub <span aria-hidden="true">↗</span>
             </a>
-            <a href="mailto:obinnachiderachinaka@gmail.com" className="mono link text-sm">get in touch</a>
+            <Link href="/contact" className="mono link text-sm">get in touch</Link>
           </div>
           <div className="mono mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs mute">
             <span><span className="acc">●</span> Building & learning</span>
@@ -38,15 +39,7 @@ export default function Hero() {
 
         <div className="relative mx-auto w-36 sm:mx-0 sm:w-44">
           <div className="absolute -inset-2 translate-x-2 translate-y-2 rounded-lg border" style={{ borderColor: "var(--accent)", opacity: .5 }} aria-hidden="true" />
-          <Image
-            src="/mybrandimage.jpg"
-            alt="Chinaka Obinna"
-            width={256}
-            height={256}
-            priority
-            className="relative aspect-square w-full rounded-lg border object-cover"
-            style={{ borderColor: "var(--line)" }}
-          />
+          <Image src="/mybrandimage.jpg" alt="Chinaka Obinna" width={256} height={256} priority className="relative aspect-square w-full rounded-lg border object-cover" style={{ borderColor: "var(--line)" }} />
           <p className="mono mt-3 text-center text-[10px] mute">devobi / profile.jpg</p>
         </div>
       </div>
