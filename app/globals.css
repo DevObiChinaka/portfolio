@@ -42,3 +42,75 @@ html {
   background-size: 200% 200%;
   animation: gradient 3s ease infinite;
 }
+
+:root {
+  --bg:#eef1ef;
+  --panel:#e3e8e5;
+  --line:#cbd3cf;
+  --fg:#1f2a27;
+  --mute:#5a6863;
+  --acc:#8a5a00;
+  --alt:#2b6b5b
+}
+
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14181a;
+    --panel:#1b2125;
+    --line:#2b3439;
+    --fg:#c8d0cc;
+    --mute:#7d8a86;
+    --acc:#dba95a;
+    --alt:#7fb8a8}
+  }
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:3.5rem
+}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--font-sans,ui-sans-serif,system-ui,sans-serif);
+  line-height:1.65
+}
+.mono{
+  font-family:var(--font-mono,ui-monospace,"JetBrains Mono",SFMono-Regular,Menlo,Consolas,monospace)}
+.mute{
+  color:var(--mute)
+} 
+.acc{
+  color:var(--acc)
+} 
+.alt{
+  color:var(--alt)
+}
+.rule{
+  border-color:var(--line)
+}
+a.link{
+  color:var(--alt)
+  ;text-decoration:underline;
+  text-decoration-color:var(--line);
+  text-underline-offset:4px
+}
+a.link:hover{
+  text-decoration-color:var(--alt)
+}
+:focus-visible{
+  outline:2px solid var(--acc);outline-offset:2px
+}
+.cursor{
+  display:inline-block;
+  width:.55em;
+  height:1.05em;
+  vertical-align:-.15em;
+  background:var(--acc);
+  animation:blink 1.1s steps(1) infinite
+}
+@keyframes blink{
+  50%{opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .cursor{animation:none}
+  html{scroll-behavior:auto}
+}
