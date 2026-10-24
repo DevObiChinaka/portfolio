@@ -32,9 +32,9 @@ export default function Contact() {
   return (
     <section id="contact" className="section pb-16">
       <p className="section-kicker">05 / SAY HELLO</p>
-      <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Have something in mind?<span className="acc">.</span></h2>
+      <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Let's build stuff that matters<span className="acc">.</span></h2>
       <p className="mt-4 max-w-2xl text-sm leading-7 mute sm:text-base">
-        Open to work and conversations about backend systems, practical software and engineering. Email works best, or send a note below.
+        Got a problem worth solving, an idea to figure out, or just want to talk software? I'm up for a good conversation.
       </p>
       <div className="mono mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
         <a className="link" href="mailto:obinnachiderachinaka@gmail.com">obinnachiderachinaka@gmail.com ↗</a>
@@ -73,9 +73,12 @@ export default function Contact() {
         </div>
       </form>
 
-      <footer className="mt-12 flex flex-col gap-2 border-t pt-5 mono text-xs mute sm:flex-row sm:items-center sm:justify-between" style={{ borderColor: "var(--line)" }}>
-        <span>© {new Date().getFullYear()} Chinaka Obinna / DevObi</span>
-        <span>Built with Next.js · TypeScript · Tailwind CSS</span>
+      <footer className="mt-12 border-t pt-8" style={{ borderColor: "var(--line)" }}>
+        <p className="text-2xl font-semibold tracking-tight sm:text-3xl">Let's build stuff that <span className="acc">matters.</span></p>
+        <div className="mt-4 flex flex-col gap-2 mono text-xs mute sm:flex-row sm:items-center sm:justify-between">
+          <span>© {new Date().getFullYear()} Chinaka Obinna / DevObi</span>
+          <a className="link" href="#top">back to top ↑</a>
+        </div>
       </footer>
     </section>
   );

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type Shot = { src: string; alt: string; caption: string };
 type Project = {
-  name: string; kind: string; description: string; focus: string;
+  name: string; kind: string; description: string; story: string;
   stack: string[]; github: string; live?: string; shots?: Shot[];
   status: string;
 };
@@ -11,7 +11,7 @@ const projects: Project[] = [
   {
     name: "ScoreCode", kind: "Final-year project", status: "Desktop + web",
     description: "A programming examination and automated code-evaluation system with a Windows exam client, central API and web administration portal for exams, submissions and grading.",
-    focus: "Explores controlled code execution, institution-aware access, exam workflows and optional human-supervised AI-assisted grading.",
+    story: "This started with something that bothered me about coding exams in Nigerian universities: students could be tested on remembering syntax and writing code on paper, instead of actually writing and running a program. I wanted to build something closer to how programming works in practice. It began as a single-institution system, then I reworked the architecture around multi-tenancy so other institutions could use it too. I want to keep developing it towards something universities can realistically adopt nationwide.",
     stack: [".NET", "C#", "WPF", "ASP.NET Core", "Blazor Server", "PostgreSQL"],
     github: "https://github.com/DevObiChinaka/ScoreCode",
     shots: [
@@ -22,25 +22,25 @@ const projects: Project[] = [
     ],
   },
   {
-    name: "Oxidane / Oxiworld", kind: "Learning platform", status: "Live preview",
-    description: "A learning platform covering subscription access, account authentication, payment workflows and integration between a web frontend and backend services.",
-    focus: "Application integration, subscription workflows and deployment concerns.",
+    name: "Oxiworld Forex Academy", kind: "Product collaboration", status: "Live preview",
+    description: "A web platform for a forex academy, bringing the idea into a working online experience.",
+    story: "Someone reached out to me with the idea, and we talked through what they wanted to build. I helped sharpen the concept, think through how it could work as a product, and bring it to life. It was a good reminder that building software is not just about implementing a spec — sometimes the first step is helping shape the idea itself.",
     stack: ["Django", "Next.js", "TypeScript", "PostgreSQL", "Redis", "Celery"],
     github: "https://github.com/DevObiChinaka/oxidane",
     live: "https://oxidane-two.vercel.app/",
     shots: [{ src: "/project-screenshots/oxiworld-homepage.jpg", alt: "Oxiworld Forex Academy homepage with market rates and trading resources", caption: "Homepage" }],
   },
   {
-    name: "UniApp", kind: "Attendance management", status: "In development",
-    description: "A university attendance system with separate frontend and backend parts, exploring QR attendance, location checks, admin workflows and facial-recognition integration.",
-    focus: "Connecting components, verification, access control and student-data privacy.",
+    name: "UniApp", kind: "Mobile app · Early project", status: "In development",
+    description: "A university attendance app concept exploring QR attendance, location checks, admin workflows and identity verification.",
+    story: "This was one of my first mobile app projects. A friend needed something along these lines for their project work, and that gave me the motivation to take it on and learn by building. I'm still working through how the different parts fit together, which is part of why the project has been useful to me.",
     stack: ["Django", "Python", "Flutter", "Dart", "PostgreSQL", "Firebase"],
     github: "https://github.com/DevObiChinaka/uniapp",
   },
   {
     name: "ADUN Dinner & Awards Night", kind: "Event ticketing", status: "Live",
-    description: "A lightweight ticketing site for a university event, with ticket detail pages and QR-code verification.",
-    focus: "A straightforward browser-based flow for presenting and checking tickets.",
+    description: "A QR-based ticketing system built for a school-wide dinner event with custom ticket details.",
+    story: "My school was organising a dinner for the whole university, and entry was ticket-based with a few custom requirements. Time was tight, so I built a QR ticket system to help manage the event — from payment handling to ticket verification and checking who was authorised to enter. It was a practical fix for a real event, delivered when it was needed.",
     stack: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/DevObiChinaka/dinner",
     live: "https://devobichinaka.github.io/dinner/",
@@ -48,8 +48,8 @@ const projects: Project[] = [
   },
   {
     name: "Darew Ventures", kind: "Corporate website", status: "Live preview",
-    description: "A responsive company website presenting a business's services and information.",
-    focus: "Structuring information clearly for a business audience.",
+    description: "A company website designed to present the business and its services clearly.",
+    story: "A more straightforward web project: organise the information, give the business a clear online presence, and make the site easy to navigate across screen sizes.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     github: "https://github.com/DevObiChinaka/darew",
     live: "https://darew.netlify.app/",
@@ -67,7 +67,7 @@ export default function Projects() {
         <a className="mono link text-sm" href="https://github.com/DevObiChinaka" target="_blank" rel="noopener noreferrer">all repositories ↗</a>
       </div>
       <p className="mt-4 max-w-2xl text-sm leading-7 mute sm:text-base">
-        A selection of projects at different stages. Each one has taught me something about how features, data, users and infrastructure fit together.
+        Some started with a problem I wanted to fix. Others started with a conversation, a deadline, or a chance to learn something new. Here's a little context behind each one.
       </p>
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -79,7 +79,10 @@ export default function Projects() {
             </div>
             <h3 className="mt-4 text-xl font-semibold tracking-tight">{p.name}</h3>
             <p className="mt-3 text-sm leading-7">{p.description}</p>
-            <p className="mt-3 text-sm leading-6 mute">{p.focus}</p>
+            <div className="mt-4 rounded-lg border p-4" style={{ borderColor: "var(--line)", background: "var(--background)" }}>
+              <p className="mono text-[10px] uppercase tracking-wider alt">A little context</p>
+              <p className="mt-2 text-sm leading-7 mute">{p.story}</p>
+            </div>
 
             <div className="mt-5 flex flex-wrap gap-2">
               {p.stack.map((s) => (
