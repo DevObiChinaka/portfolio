@@ -29,20 +29,21 @@ export default function Projects({ featuredOnly = false }: ProjectsProps) {
             </div>
             {project.shots?.[0] && <div className="mt-5 overflow-hidden rounded-lg border" style={{ borderColor: "var(--line)", background: "var(--background)" }}><Image src={project.shots[0].src} alt={project.shots[0].alt} width={1200} height={800} className="aspect-[16/9] w-full object-cover object-top" sizes="(max-width: 768px) 100vw, 460px" /></div>}
             <h3 className="mt-5 text-xl font-semibold tracking-tight">{project.name}</h3>
-            <p className="mt-3 text-sm leading-7 mute">{project.description}</p>
+            <p className="mt-3 text-sm leading-7">{project.story}</p>
+            <p className="mt-3 text-xs leading-6 mute">{project.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.slice(0, 5).map((item) => <span key={item} className="mono rounded border px-2 py-1 text-[10px] sm:text-xs" style={{ background: "var(--background)", borderColor: "var(--line)", color: "var(--muted)" }}>{item}</span>)}
               {project.stack.length > 5 && <span className="mono px-1 py-1 text-[10px] mute">+{project.stack.length - 5}</span>}
             </div>
             <div className="mono mt-auto flex flex-wrap gap-x-4 gap-y-2 pt-6 text-sm">
-              {project.caseStudy && <Link className="link" href={`/projects/${project.slug}`}>how I approached it ↗</Link>}
+              {project.caseStudy && <Link className="link" href={`/projects/${project.slug}`}>a little more about it ↗</Link>}
               <a className="link" href={project.github} target="_blank" rel="noopener noreferrer">source ↗</a>
               {project.live && <a className="link" href={project.live} target="_blank" rel="noopener noreferrer">try the demo ↗</a>}
             </div>
           </article>
         ))}
       </div>
-      {!featuredOnly && <p className="mt-6 text-xs leading-6 mute">Some projects have more to say than fits on a card. For those, I've written a little about the problem and the choices I made. For the rest, the code or demo is probably the best place to start.</p>}
+      {!featuredOnly && <p className="mt-6 text-xs leading-6 mute">Some projects have more to say than fits here. I've added a little more context to a few of them, and you can always check out the code or demo.</p>}
     </section>
   );
 }
