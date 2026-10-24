@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
+import ExpandableText from "@/components/ExpandableText";
 
 type ProjectsProps = { featuredOnly?: boolean };
 
@@ -29,11 +30,7 @@ export default function Projects({ featuredOnly = false }: ProjectsProps) {
             </div>
             {project.shots?.[0] && <div className="mt-5 overflow-hidden rounded-lg border" style={{ borderColor: "var(--line)", background: "var(--background)" }}><Image src={project.shots[0].src} alt={project.shots[0].alt} width={1200} height={800} className="aspect-[16/9] w-full object-cover object-top" sizes="(max-width: 768px) 100vw, 460px" /></div>}
             <h3 className="mt-5 text-xl font-semibold tracking-tight">{project.name}</h3>
-            <p className="mt-3 line-clamp-3 text-sm leading-7">{project.story}</p>
-            <details className="mt-1">
-              <summary className="mono w-fit cursor-pointer list-none text-xs link underline-offset-4 hover:underline [&::-webkit-details-marker]:hidden">more…</summary>
-              <p className="mt-2 text-sm leading-7">{project.story}</p>
-            </details>
+            <ExpandableText text={project.story} />
             <p className="mt-3 line-clamp-2 text-xs leading-6 mute">{project.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.slice(0, 5).map((item) => <span key={item} className="mono rounded border px-2 py-1 text-[10px] sm:text-xs" style={{ background: "var(--background)", borderColor: "var(--line)", color: "var(--muted)" }}>{item}</span>)}
