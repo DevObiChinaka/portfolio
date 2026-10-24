@@ -14,7 +14,7 @@ export default function Hero() {
             Chinaka Obinna<span className="acc">.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 sm:text-xl">
-            I build practical software and work through the systems behind it — from application logic and APIs to data, integrations and deployment.
+            I build practical software and work through the systems behind it... From application logic and APIs to data, integrations and deployment.
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-7 mute sm:text-base">
             Software Engineering graduate interested in backend systems, thoughtful engineering decisions, and how people work with AI-assisted development tools.
