@@ -20,17 +20,21 @@ export default function Projects({ featuredOnly = false }: ProjectsProps) {
           ? "Some things I built for school, some for other people, and some because I wanted to see if I could make them work."
           : "Not everything here is a finished product. This is a mix of school work, things built for real needs, experiments, and projects I used to learn something new."}
       </p>
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2">
         {visibleProjects.map((project, index) => (
-          <article key={project.slug} className="panel flex min-w-0 flex-col rounded-xl p-5 sm:p-6" style={{ background: "var(--panel)" }}>
+          <article key={project.slug} className="panel flex h-full min-w-0 flex-col rounded-xl p-5 sm:p-6" style={{ background: "var(--panel)" }}>
             <div className="flex items-start justify-between gap-3">
               <span className="mono text-xs alt">0{index + 1} / {project.kind}</span>
               <span className="mono rounded-full border px-2 py-1 text-[10px] mute" style={{ borderColor: "var(--line)" }}>{project.status}</span>
             </div>
             {project.shots?.[0] && <div className="mt-5 overflow-hidden rounded-lg border" style={{ borderColor: "var(--line)", background: "var(--background)" }}><Image src={project.shots[0].src} alt={project.shots[0].alt} width={1200} height={800} className="aspect-[16/9] w-full object-cover object-top" sizes="(max-width: 768px) 100vw, 460px" /></div>}
             <h3 className="mt-5 text-xl font-semibold tracking-tight">{project.name}</h3>
-            <p className="mt-3 text-sm leading-7">{project.story}</p>
-            <p className="mt-3 text-xs leading-6 mute">{project.description}</p>
+            <p className="mt-3 line-clamp-3 text-sm leading-7">{project.story}</p>
+            <details className="mt-1">
+              <summary className="mono w-fit cursor-pointer list-none text-xs link underline-offset-4 hover:underline [&::-webkit-details-marker]:hidden">more…</summary>
+              <p className="mt-2 text-sm leading-7">{project.story}</p>
+            </details>
+            <p className="mt-3 line-clamp-2 text-xs leading-6 mute">{project.description}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.slice(0, 5).map((item) => <span key={item} className="mono rounded border px-2 py-1 text-[10px] sm:text-xs" style={{ background: "var(--background)", borderColor: "var(--line)", color: "var(--muted)" }}>{item}</span>)}
               {project.stack.length > 5 && <span className="mono px-1 py-1 text-[10px] mute">+{project.stack.length - 5}</span>}
