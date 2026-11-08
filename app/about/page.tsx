@@ -3,8 +3,8 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 
 export const metadata: Metadata = {
-  title: "About | DevObi",
-  description: "About DevObi's software engineering background, technical interests and approach to building software."
+  title: "About | Chinaka Obinna (DevObi)",
+  description: "About Chinaka Obinna (DevObi), a Software Engineering graduate from Nigeria interested in software systems, application development, architecture and human–AI collaboration."
 };
 
 export default function AboutPage() {
