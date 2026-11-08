@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "Contact | DevObi",
-  description: "Get in touch with DevObi about software projects, collaboration or a conversation about engineering."
+  title: "Contact | Chinaka Obinna (DevObi)",
+  description: "Get in touch with Chinaka Obinna (DevObi) about software projects, collaboration or a conversation about engineering."
 };
 
 export default function ContactPage() {
