@@ -13,11 +13,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((item) => item.slug === slug && item.caseStudy);
-  if (!project) return { title: "Project not found | DevObi" };
+  if (!project) return { title: "Project not found | Chinaka Obinna (DevObi)" };
+
   return {
-    title: `${project.name} | DevObi`,
+    title: `${project.name} | Chinaka Obinna (DevObi)`,
     description: project.description,
-    openGraph: { title: `${project.name} | DevObi`, description: project.description }
+    alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      title: `${project.name} | Chinaka Obinna (DevObi)`,
+      description: project.description,
+      url: `/projects/${project.slug}`,
+      type: "article"
+    }
   };
 }
 
@@ -27,9 +34,28 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project?.caseStudy) notFound();
   const study = project.caseStudy;
 
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.name,
+    description: project.description,
+    url: `https://devobichinaka.vercel.app/projects/${project.slug}`,
+    creator: {
+      "@type": "Person",
+      name: "Chinaka Obinna",
+      alternateName: "DevObi",
+      url: "https://devobichinaka.vercel.app"
+    },
+    keywords: project.stack.join(", "),
+  };
+
   return (
     <main className="min-h-screen pt-14">
       <article className="site-shell">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+        />
         <header className="pb-10 pt-12 sm:pt-20">
           <Link href="/projects" className="mono link text-xs">← all projects</Link>
           <p className="section-kicker mt-8">{project.kind.toUpperCase()} / A LITTLE CONTEXT</p>
