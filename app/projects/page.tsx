@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Projects from "@/components/Projects";
 
 export const metadata: Metadata = {
-  title: "Projects | DevObi",
-  description: "A few things I've worked on, some finished and some still in progress."
+  title: "Projects | Chinaka Obinna (DevObi)",
+  description: "Projects by Chinaka Obinna (DevObi), including software systems, web applications, backend services and practical development work."
 };
 
 export default function ProjectsPage() {
