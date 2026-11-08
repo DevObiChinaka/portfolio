@@ -6,25 +6,79 @@ import Navbar from "@/components/Navbar";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const siteUrl = "https://devobichinaka.vercel.app";
+
 export const metadata: Metadata = {
-  title: "DevObi | Software Engineer — Backend Systems & Application Architecture",
-  description: "Portfolio of Chinaka Obinna (DevObi), a Software Engineering graduate interested in backend systems, application architecture, software reliability, and human–AI collaboration.",
-  keywords: ["Chinaka Obinna", "DevObi", "Software Engineer", "Backend Development", "Application Architecture", "Django", "Python", "Next.js", "TypeScript", "Software Engineering", "Human-AI Collaboration"],
-  authors: [{ name: "Chinaka Obinna (DevObi)", url: "https://github.com/DevObiChinaka" }],
-  creator: "Chinaka Obinna (DevObi)",
-  metadataBase: new URL("https://devobichinaka.vercel.app"),
+  title: "Chinaka Obinna (DevObi) | Software Engineer",
+  description: "Chinaka Obinna (DevObi) is a Software Engineering graduate from Nigeria who builds applications and software systems, with experience across web development, backend services, APIs and modern development tools.",
+  keywords: [
+    "Chinaka Obinna",
+    "DevObi",
+    "Software Engineer",
+    "Software Engineering",
+    "Web Development",
+    "Backend Development",
+    "Software Systems",
+    "Application Development",
+    "Nigeria"
+  ],
+  authors: [{ name: "Chinaka Obinna", url: "https://github.com/DevObiChinaka" }],
+  creator: "Chinaka Obinna",
+  metadataBase: new URL(siteUrl),
   alternates: { canonical: "/" },
   openGraph: {
-    type: "website", locale: "en_NG", url: "https://devobichinaka.vercel.app",
-    title: "DevObi | Software Engineering Portfolio",
-    description: "Selected software projects and interests in backend systems, application architecture, and human–AI collaboration.",
-    siteName: "DevObi Portfolio",
-    images: [{ url: "/mybrandimage.jpg", width: 1024, height: 1024, alt: "DevObi — Software Engineering graduate", type: "image/jpeg" }],
+    type: "website",
+    locale: "en_NG",
+    url: siteUrl,
+    title: "Chinaka Obinna (DevObi) | Software Engineer",
+    description: "Portfolio of Chinaka Obinna (DevObi), a Software Engineering graduate building applications and software systems.",
+    siteName: "Chinaka Obinna (DevObi)",
+    images: [{
+      url: "/mybrandimage.jpg",
+      width: 1024,
+      height: 1024,
+      alt: "Chinaka Obinna (DevObi)",
+      type: "image/jpeg"
+    }],
   },
-  twitter: { card: "summary_large_image", title: "DevObi | Software Engineering Portfolio", description: "Selected software projects and interests in backend systems, application architecture, and human–AI collaboration.", images: ["/mybrandimage.jpg"], creator: "@devobichinaka" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
-  verification: { google: "rb7tKfqCWtnYDWA5OZFMFkYx3sCNVj4u7w7imvAcx1w" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chinaka Obinna (DevObi) | Software Engineer",
+    description: "Portfolio of Chinaka Obinna (DevObi), a Software Engineering graduate building applications and software systems.",
+    images: ["/mybrandimage.jpg"],
+    creator: "@devobichinaka"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1
+    }
+  },
+  verification: {
+    google: "rb7tKfqCWtnYDWA5OZFMFkYx3sCNVj4u7w7imvAcx1w"
+  },
   category: "Technology",
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Chinaka Obinna",
+  alternateName: "DevObi",
+  url: siteUrl,
+  image: `${siteUrl}/mybrandimage.jpg`,
+  jobTitle: "Software Engineer",
+  description: "Software Engineering graduate from Nigeria interested in building useful software systems and understanding how people work with them.",
+  sameAs: [
+    "https://github.com/DevObiChinaka",
+    "https://x.com/devobichinaka",
+    "https://instagram.com/devobichinaka"
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -34,6 +88,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0b0d10" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
