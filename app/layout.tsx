@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     }
   },
   verification: {
-    google: "rb7tKfqCWtnYDWA5OZFMFkYx3sCNVj4u7w7imvAcx1w"
+    google: "HZdclh1sMKS9Izc9RP7tmyeKN8JR4G3Q3noqk7LYB0g"
   },
   category: "Technology",
 };
@@ -88,6 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="theme-color" content="#0b0d10" />
+        <meta name="google-site-verification" content="HZdclh1sMKS9Izc9RP7tmyeKN8JR4G3Q3noqk7LYB0g" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
