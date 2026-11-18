@@ -3,7 +3,10 @@ import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
   title: "Contact | Chinaka Obinna (DevObi)",
-  description: "Get in touch with Chinaka Obinna (DevObi) about software projects, collaboration or a conversation about engineering."
+  description: "Get in touch with Chinaka Obinna (DevObi) about software projects, collaboration or a conversation about engineering.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
