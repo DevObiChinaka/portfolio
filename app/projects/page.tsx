@@ -3,7 +3,10 @@ import Projects from "@/components/Projects";
 
 export const metadata: Metadata = {
   title: "Projects | Chinaka Obinna (DevObi)",
-  description: "Projects by Chinaka Obinna (DevObi), including software systems, web applications, backend services and practical development work."
+  description: "Projects by Chinaka Obinna (DevObi), including software systems, web applications, backend services and practical development work.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 
 export default function ProjectsPage() {
