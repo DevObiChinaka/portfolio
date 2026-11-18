@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   authors: [{ name: "Chinaka Obinna", url: "https://github.com/DevObiChinaka" }],
   creator: "Chinaka Obinna",
   metadataBase: new URL(siteUrl),
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "en_NG",
